@@ -4,14 +4,15 @@ import threading
 import pandas as pd
 from groq import Groq
 import warnings
+import os
 
 warnings.filterwarnings("ignore")
 
 # ──────────────────────────────────────────────
 #  Config
 # ──────────────────────────────────────────────
-GROQ_API_KEY = "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"
-TMDB_API_KEY = "c6b00bb8a39d951e24872bcc98514c4e"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 client = Groq(api_key=GROQ_API_KEY)
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
